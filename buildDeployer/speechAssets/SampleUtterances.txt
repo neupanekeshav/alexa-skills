@@ -1,0 +1,17 @@
+GetLoginEventIntent connect to Team city
+GetLoginEventIntent log in to Team city
+GetLoginEventIntent login to team city
+
+GetDeployEventIntent run the {build} deployment
+GetDeployEventIntent trigger {build} deployment
+GetDeployEventIntent run the deployer for {build}
+
+
+GetDeploymentStatusEventIntent status of {build} deployment
+GetDeploymentStatusEventIntent get the status of  {build} build
+GetDeploymentStatusEventIntent get the status of {build}
+
+AMAZON.StopIntent no
+AMAZON.StopIntent nope
+AMAZON.StopIntent no thanks
+AMAZON.StopIntent no thank you

@@ -1,0 +1,23 @@
+{"authentication":"Basic yourAuthforTeamcity",
+  "baseUrl":"http://yourteamcitybaseURL",
+  "QADev":"QaAutomation_DeployScript",
+  "QA":
+   {
+     "name": "buildName ( buildID) that is to be deployed",
+     "environment": "environemnt to be deployed",
+     "release":"true"
+   },
+  "Dev server":
+  {
+    "name": "server_Baked",
+    "environment": "dev",
+    "release":"true"
+
+  },
+  "Prod server":
+  {
+    "name": "Prod_server_Baked",
+    "environment": "Prod",
+    "release":"true"
+    }
+}

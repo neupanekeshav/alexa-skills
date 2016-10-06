@@ -1,0 +1,33 @@
+{
+  "intents": [
+    {
+      "intent": "GetLoginEventIntent"
+
+    },
+     {
+      "intent": "GetDeployEventIntent",
+       "slots": [
+        {
+          "name": "build",
+          "type": "LIST_OF_BUILDS"
+        }]
+    },
+    {
+      "intent": "GetDeploymentStatusEventIntent",
+       "slots": [
+        {
+          "name": "build",
+          "type": "LIST_OF_BUILDS"
+        }]
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    }
+  ]
+}

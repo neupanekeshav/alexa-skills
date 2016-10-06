@@ -1,0 +1,23 @@
+{
+  "name": "alexa-skill-builddeployer",
+  "version": "1.0.0",
+  "description": "Alexa skill to deploy the desired build",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "alexa",
+    "skills",
+    "deploy",
+    "build"
+  ],
+  "author": "keshav@xappmedia.com",
+  "license": "ISC",
+  "dependencies": {
+    "alexa-sdk": "^1.0.0",
+    "xmldom": "^0.1.22",
+    "xmlhttprequest": "^1.8.0"
+
+  }
+}
