@@ -11,7 +11,13 @@ GetDeploymentStatusEventIntent status of {build} deployment
 GetDeploymentStatusEventIntent get the status of  {build} build
 GetDeploymentStatusEventIntent get the status of {build}
 
-AMAZON.StopIntent no
+AMAZON.StopIntent stop
 AMAZON.StopIntent nope
 AMAZON.StopIntent no thanks
 AMAZON.StopIntent no thank you
+
+AMAZON.CancelIntent cancel
+AMAZON.CancelIntent exit
+AMAZON.CancelIntent quit
+
+AMAZON.HelpIntent Help

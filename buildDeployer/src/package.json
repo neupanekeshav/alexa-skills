@@ -15,7 +15,7 @@
   "author": "keshav@xappmedia.com",
   "license": "ISC",
   "dependencies": {
-    "alexa-sdk": "^1.0.0",
+    "alexa-sdk": "^1.0.6",
     "xmldom": "^0.1.22",
     "xmlhttprequest": "^1.8.0"
 

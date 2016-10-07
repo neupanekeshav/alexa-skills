@@ -6,6 +6,7 @@ var https = require('https');
  * The AlexaSkill Module that has the AlexaSkill prototype and helper functions
  */
 var AlexaSkill = require('./AlexaSkill');
+//var AlexaSkill = require("alexa-sdk");
 
 var BuildDeployer = function() {
     AlexaSkill.call(this, APP_ID);
