@@ -119,7 +119,7 @@ var triggerBuild = function triggerBuild(self, callback) {
 }
 
 module.exports = {
-    handleLoginEventRequest: function(self) {
+    handleLoginEventRequest: function(self, callback) {
         var repromptText = "With BuildDeployer , you can deploy the build from Team City or login to team city. For example, you could say run the QA Deployment or log in to team city, what day do you want to say?";
         var cardTitle = "LoginRequest";
         var speechText = "";
@@ -138,11 +138,11 @@ module.exports = {
                 speechText = "There is a problem connecting. Please try again later.";
                 cardContent = speechText;
             };
-
-            self.emit(':askWithCard', speechText, repromptText, cardTitle, cardContent);
+            callback(speechText, repromptText, cardTitle, cardContent);
+            //self.emit(':askWithCard', speechText, repromptText, cardTitle, cardContent);
         })
     },
-    handleDeployEventRequest: function(self) {
+    handleDeployEventRequest: function(self, callback) {
         var repromptText = "With Build Deployer , you can deploy the build from Teamcity. For example, you could say run the QA deployment, what day do you want to say?";
         var cardTitle = "DeployBuild";
         var speechText = "";
@@ -158,11 +158,11 @@ module.exports = {
                 speechText = "There is a problem connecting. Please try again later.";
                 cardContent = speechText;
             };
-            self.emit(':askWithCard', speechText, repromptText, cardTitle, cardContent);
+            callback(speechText, repromptText, cardTitle, cardContent);
         })
 
     },
-    handleDeploymentStatusEventRequest: function(self) {
+    handleDeploymentStatusEventRequest: function(self, callback) {
         var repromptText = "With Build Deployer , you can get the status of the build. For example, you could say Status of  the QA deployment, what day do you want to say?";
         var cardTitle = "BuildStatus";
         var speechText = "";
@@ -184,7 +184,7 @@ module.exports = {
                 speechText = "There is a problem connecting. Please try again later.";
                 cardContent = speechText;
             };
-            self.emit(':askWithCard', speechText, repromptText, cardTitle, cardContent);
+            callback(speechText, repromptText, cardTitle, cardContent);
         })
 
     }

@@ -25,11 +25,11 @@ var loginEventHandlers = {
         this.emit('handleLoginEventRequest')
     },
     'handleLoginEventRequest': function() {
-        //this.emit(':tell', 'this is where I will log in!');
         var self = this;
-        utils.handleLoginEventRequest(self);
+        utils.handleLoginEventRequest(self, function(speechText, repromptText, cardTitle, cardContent) {
+            self.emit(':askWithCard', speechText, repromptText, cardTitle, cardContent);
 
-        //this.emit(':tell','login successful')
+        });
     },
     'AMAZON.NoIntent': function() {
         // Handle No intent.
@@ -62,7 +62,9 @@ var deployEventHandlers = {
     },
     'handleDeployEventRequest': function() {
         var self = this;
-        utils.handleDeployEventRequest(self);
+        utils.handleDeployEventRequest(self, function(speechText, repromptText, cardTitle, cardContent){
+          self.emit(':askWithCard', speechText, repromptText, cardTitle, cardContent);
+        });
 
     },
     'AMAZON.NoIntent': function() {
@@ -97,7 +99,9 @@ var deploymentStatusEventHandlers = {
     },
     'handleDeploymentStatusEventRequest': function() {
         var self = this;
-        utils.handleDeploymentStatusEventRequest(self);
+        utils.handleDeploymentStatusEventRequest(self, function(speechText, repromptText, cardTitle, cardContent){
+          self.emit(':askWithCard', speechText, repromptText, cardTitle, cardContent);
+        });
 
     },
     'AMAZON.NoIntent': function() {
