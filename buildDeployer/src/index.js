@@ -9,111 +9,111 @@ var helpMessage = "With BuildDeployer, you can deploy your desired build." +
 
 exports.handler = function(event, context, callback) {
     var alexa = Alexa.handler(event, context);
-    alexa.registerHandlers(loginEventHandlers,deployEventHandlers,deploymentStatusEventHandlers );
+    alexa.registerHandlers(loginEventHandlers, deployEventHandlers, deploymentStatusEventHandlers);
     alexa.execute();
 };
 
 var loginEventHandlers = {
-  'NewSession': function(){
+    'NewSession': function() {
 
-    this.attributes['speechOutput'] = 'welcome to Build Deployer. You can log in to Team city or deploy your desired build or ask for build status.  What would you like to do?';
-    this.attributes['repromptSpeech'] = 'with Build Deployer , you can deploy the desired build from team city based on your settings.';
+        this.attributes['speechOutput'] = 'welcome to Build Deployer. You can log in to Team city or deploy your desired build or ask for build status.  What would you like to do?';
+        this.attributes['repromptSpeech'] = 'with Build Deployer , you can deploy the desired build from team city based on your settings.';
 
-    this.emit(':ask',this.attributes['speechOutput']);
-  },
-    'GetLoginEventIntent': function () {
+        this.emit(':ask', this.attributes['speechOutput']);
+    },
+    'GetLoginEventIntent': function() {
         this.emit('handleLoginEventRequest')
     },
-    'handleLoginEventRequest': function () {
+    'handleLoginEventRequest': function() {
         //this.emit(':tell', 'this is where I will log in!');
         var self = this;
         utils.handleLoginEventRequest(self);
 
         //this.emit(':tell','login successful')
     },
-    'AMAZON.NoIntent': function () {
-       // Handle No intent.
-       this.emit(':tell', goodbyeMessage);
-   },
-   'AMAZON.StopIntent': function () {
-       this.emit(':tell', goodbyeMessage);
-   },
-   'AMAZON.CancelIntent': function () {
-       this.emit(':tell', goodbyeMessage);
-   },
-   'AMAZON.HelpIntent': function () {
-       this.emit(':ask', helpMessage, helpMessage);
-   },
-   'Unhandled': function () {
-       this.emit(':ask',this.attributes['repromptSpeech']);
-   }
+    'AMAZON.NoIntent': function() {
+        // Handle No intent.
+        this.emit(':tell', goodbyeMessage);
+    },
+    'AMAZON.StopIntent': function() {
+        this.emit(':tell', goodbyeMessage);
+    },
+    'AMAZON.CancelIntent': function() {
+        this.emit(':tell', goodbyeMessage);
+    },
+    'AMAZON.HelpIntent': function() {
+        this.emit(':ask', helpMessage, helpMessage);
+    },
+    'Unhandled': function() {
+        this.emit(':ask', this.attributes['repromptSpeech']);
+    }
 };
 
 var deployEventHandlers = {
-  'NewSession': function(){
+    'NewSession': function() {
 
-    this.attributes['speechOutput'] = 'welcome to Build Deployer. You can log in to Team city or deploy your desired build or ask for build status.  What would you like to do?';
-    this.attributes['repromptSpeech'] = 'with Build Deployer , you can deploy the desired build from team city based on your settings.';
+        this.attributes['speechOutput'] = 'welcome to Build Deployer. You can log in to Team city or deploy your desired build or ask for build status.  What would you like to do?';
+        this.attributes['repromptSpeech'] = 'with Build Deployer , you can deploy the desired build from team city based on your settings.';
 
-    this.emit(':ask',this.attributes['speechOutput']);
-  },
-    'GetDeployEventIntent': function () {
+        this.emit(':ask', this.attributes['speechOutput']);
+    },
+    'GetDeployEventIntent': function() {
         this.emit('handleDeployEventRequest')
     },
-    'handleDeployEventRequest': function () {
+    'handleDeployEventRequest': function() {
         var self = this;
         utils.handleDeployEventRequest(self);
 
     },
-    'AMAZON.NoIntent': function () {
-       // Handle No intent.
-       this.emit(':tell', goodbyeMessage);
-   },
-   'AMAZON.StopIntent': function () {
-       this.emit(':tell', goodbyeMessage);
-   },
-   'AMAZON.CancelIntent': function () {
-       this.emit(':tell', goodbyeMessage);
-   },
-   'AMAZON.HelpIntent': function () {
-       this.emit(':ask', helpMessage, helpMessage);
-   },
-   'Unhandled': function () {
-       this.emit(':ask',this.attributes['repromptSpeech']);
-   }
+    'AMAZON.NoIntent': function() {
+        // Handle No intent.
+        this.emit(':tell', goodbyeMessage);
+    },
+    'AMAZON.StopIntent': function() {
+        this.emit(':tell', goodbyeMessage);
+    },
+    'AMAZON.CancelIntent': function() {
+        this.emit(':tell', goodbyeMessage);
+    },
+    'AMAZON.HelpIntent': function() {
+        this.emit(':ask', helpMessage, helpMessage);
+    },
+    'Unhandled': function() {
+        this.emit(':ask', this.attributes['repromptSpeech']);
+    }
 };
 
 
 var deploymentStatusEventHandlers = {
-  'NewSession': function(){
+    'NewSession': function() {
 
-    this.attributes['speechOutput'] = 'welcome to Build Deployer. You can log in to Team city or deploy your desired build or ask for build status.  What would you like to do?';
-    this.attributes['repromptSpeech'] = 'with Build Deployer , you can deploy the desired build from team city based on your settings.';
+        this.attributes['speechOutput'] = 'welcome to Build Deployer. You can log in to Team city or deploy your desired build or ask for build status.  What would you like to do?';
+        this.attributes['repromptSpeech'] = 'with Build Deployer , you can deploy the desired build from team city based on your settings.';
 
-    this.emit(':ask',this.attributes['speechOutput']);
-  },
-    'GetDeploymentStatusEventIntent': function () {
+        this.emit(':ask', this.attributes['speechOutput']);
+    },
+    'GetDeploymentStatusEventIntent': function() {
         this.emit('handleDeploymentStatusEventRequest')
     },
-    'handleDeploymentStatusEventRequest': function () {
+    'handleDeploymentStatusEventRequest': function() {
         var self = this;
         utils.handleDeploymentStatusEventRequest(self);
 
     },
-    'AMAZON.NoIntent': function () {
-       // Handle No intent.
-       this.emit(':tell', goodbyeMessage);
-   },
-   'AMAZON.StopIntent': function () {
-       this.emit(':tell', goodbyeMessage);
-   },
-   'AMAZON.CancelIntent': function () {
-       this.emit(':tell', goodbyeMessage);
-   },
-   'AMAZON.HelpIntent': function () {
-       this.emit(':ask', helpMessage, helpMessage);
-   },
-   'Unhandled': function () {
-       this.emit(':ask',this.attributes['repromptSpeech']);
-   }
+    'AMAZON.NoIntent': function() {
+        // Handle No intent.
+        this.emit(':tell', goodbyeMessage);
+    },
+    'AMAZON.StopIntent': function() {
+        this.emit(':tell', goodbyeMessage);
+    },
+    'AMAZON.CancelIntent': function() {
+        this.emit(':tell', goodbyeMessage);
+    },
+    'AMAZON.HelpIntent': function() {
+        this.emit(':ask', helpMessage, helpMessage);
+    },
+    'Unhandled': function() {
+        this.emit(':ask', this.attributes['repromptSpeech']);
+    }
 };
