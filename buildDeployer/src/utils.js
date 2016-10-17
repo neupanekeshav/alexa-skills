@@ -139,7 +139,6 @@ module.exports = {
                 cardContent = speechText;
             };
             callback(speechText, repromptText, cardTitle, cardContent);
-            //self.emit(':askWithCard', speechText, repromptText, cardTitle, cardContent);
         })
     },
     handleDeployEventRequest: function(self, callback) {

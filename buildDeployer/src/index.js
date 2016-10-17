@@ -62,8 +62,8 @@ var deployEventHandlers = {
     },
     'handleDeployEventRequest': function() {
         var self = this;
-        utils.handleDeployEventRequest(self, function(speechText, repromptText, cardTitle, cardContent){
-          self.emit(':askWithCard', speechText, repromptText, cardTitle, cardContent);
+        utils.handleDeployEventRequest(self, function(speechText, repromptText, cardTitle, cardContent) {
+            self.emit(':askWithCard', speechText, repromptText, cardTitle, cardContent);
         });
 
     },
@@ -99,8 +99,8 @@ var deploymentStatusEventHandlers = {
     },
     'handleDeploymentStatusEventRequest': function() {
         var self = this;
-        utils.handleDeploymentStatusEventRequest(self, function(speechText, repromptText, cardTitle, cardContent){
-          self.emit(':askWithCard', speechText, repromptText, cardTitle, cardContent);
+        utils.handleDeploymentStatusEventRequest(self, function(speechText, repromptText, cardTitle, cardContent) {
+            self.emit(':askWithCard', speechText, repromptText, cardTitle, cardContent);
         });
 
     },
