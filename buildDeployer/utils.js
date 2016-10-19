@@ -38,13 +38,13 @@ var readFile = function readJSONfile(callback) {
     var fs = require("fs");
     console.log("Starting");
 
-    fs.exists("./buildDeployer/config/config.json", function(fileok) {
-        if (fileok) fs.readFile("./buildDeployer/config/config.json", function(error, data) {
+    fs.exists( __dirname +"/config/config.json", function(fileok) {
+        if (fileok) fs.readFile( __dirname+ "/config/config.json", function(error, data) {
             var jsonObject = JSON.parse(data);
             callback(jsonObject);
         });
         else console.log("file not found");
-        console.log("This file is " +  __dirname);
+        //console.log("This file is " +  __dirname);
     });
 }
 
