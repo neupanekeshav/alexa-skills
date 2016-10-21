@@ -7,11 +7,15 @@ Update config-example.json to config.json based on your desired settings
 
 ## Getting Started
 Clone the Repo
+```
 $cd /buildDeployer
+```
+```
 $ npm install
-
+```
 Update config with your desired TeamCity changes
 and test it by running it locally
+```
 $ bst proxy lambda buildDeployer/index.js
-
-Details on bst and tutorials on setting up the skill can be found [here](https://github.com/bespoken/bst)
+```
+Details on ***bst*** and tutorials on setting up the skill can be found [here](https://github.com/bespoken/bst)
