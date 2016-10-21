@@ -39,7 +39,7 @@ var readFile = function readJSONfile(callback) {
     console.log("Starting");
 
     fs.exists( __dirname +"/config/config.json", function(fileok) {
-        if (fileok) fs.readFile( __dirname+ "/config/config.json", function(error, data) {
+        if (fileok) fs.readFile( __dirname+"/config/config.json", function(error, data) {
             var jsonObject = JSON.parse(data);
             callback(jsonObject);
         });
@@ -98,7 +98,7 @@ var triggerBuild = function triggerBuild(self, callback) {
                 </build>";
         var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
         var xmlHttp = new XMLHttpRequest();
-        xmlHttp.open("POST", teamcityurl, false);
+        xmlHttp.open("POST", teamcityurl, true);
         xmlHttp.setRequestHeader("Authorization", jsonObject.authentication);
         xmlHttp.setRequestHeader("Content-Type", "application/xml");
         xmlHttp.onload = function(e) {
@@ -121,7 +121,7 @@ var triggerBuild = function triggerBuild(self, callback) {
 
 module.exports = {
     handleLoginEventRequest: function(self, callback) {
-        var repromptText = "With BuildDeployer , you can deploy the build from Team City or login to team city. For example, you could say run the QA Deployment or log in to team city, what day do you want to say?";
+        var repromptText = "With BuildDeployer , you can deploy the build from Team City or login to team city. For example, you could say run the QA Deployment or log in to team city, what  do you want to say?";
         var cardTitle = "LoginRequest";
         var speechText = "";
         var cardContent = "";
@@ -143,7 +143,7 @@ module.exports = {
         })
     },
     handleDeployEventRequest: function(self, callback) {
-        var repromptText = "With Build Deployer , you can deploy the build from Teamcity. For example, you could say run the QA deployment, what day do you want to say?";
+        var repromptText = "With Build Deployer , you can deploy the build from Teamcity. For example, you could say run the QA deployment, what do you want to say?";
         var cardTitle = "DeployBuild";
         var speechText = "";
         var cardContent = "";
@@ -163,7 +163,7 @@ module.exports = {
 
     },
     handleDeploymentStatusEventRequest: function(self, callback) {
-        var repromptText = "With Build Deployer , you can get the status of the build. For example, you could say Status of  the QA deployment, what day do you want to say?";
+        var repromptText = "With Build Deployer , you can get the status of the build. For example, you could say Status of  the QA deployment, what do you want to say?";
         var cardTitle = "BuildStatus";
         var speechText = "";
         var cardContent = "";
