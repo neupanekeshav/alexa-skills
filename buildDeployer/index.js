@@ -5,7 +5,7 @@ var utils = require('./utils');
 var goodbyeMessage = "See you next time, Good bye";
 var helpMessage = "With BuildDeployer, you can deploy your desired build." +
     "For example, you could say run the QA Deployment, or you can say exit. Now, what would you like to do?";
-
+//var process.chdir('/tmp');
 
 exports.handler = function(event, context, callback) {
     var alexa = Alexa.handler(event, context);
@@ -14,12 +14,14 @@ exports.handler = function(event, context, callback) {
 };
 
 var loginEventHandlers = {
-    'NewSession': function() {
+    'LaunchRequest': function() {
 
-        this.attributes['speechOutput'] = 'welcome to Build Deployer. You can log in to Team city or deploy your desired build or ask for build status.  What would you like to do?';
-        this.attributes['repromptSpeech'] = 'with Build Deployer , you can deploy the desired build from team city based on your settings.';
-
-        this.emit(':ask', this.attributes['speechOutput']);
+        //this.attributes['speechOutput'] = 'welcome to Build Deployer. You can log in to Team city or deploy your desired build or ask for build status.  What would you like to do?';
+        //this.attributes['repromptSpeech'] = 'with Build Deployer , you can deploy the desired build from team city based on your settings.';
+        var speechOutput = 'welcome to Build Deployer. You can log in to Team city or deploy your desired build or ask for build status.  What would you like to do?';
+        var repromptSpeech = 'with Build Deployer , you can deploy the desired build from team city based on your settings.';
+        //this.emit(':ask', this.attributes['speechOutput'], this.attributes['repromptSpeech']);
+        this.emit(':ask', speechOutput, repromptSpeech);
     },
     'GetLoginEventIntent': function() {
         this.emit('handleLoginEventRequest')
@@ -50,7 +52,7 @@ var loginEventHandlers = {
 };
 
 var deployEventHandlers = {
-    'NewSession': function() {
+    'LaunchRequest': function() {
 
         this.attributes['speechOutput'] = 'welcome to Build Deployer. You can log in to Team city or deploy your desired build or ask for build status.  What would you like to do?';
         this.attributes['repromptSpeech'] = 'with Build Deployer , you can deploy the desired build from team city based on your settings.';
@@ -87,7 +89,7 @@ var deployEventHandlers = {
 
 
 var deploymentStatusEventHandlers = {
-    'NewSession': function() {
+    'LaunchRequest': function() {
 
         this.attributes['speechOutput'] = 'welcome to Build Deployer. You can log in to Team city or deploy your desired build or ask for build status.  What would you like to do?';
         this.attributes['repromptSpeech'] = 'with Build Deployer , you can deploy the desired build from team city based on your settings.';
